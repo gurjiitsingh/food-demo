@@ -174,17 +174,17 @@ export async function updateCategoryFlag(
 
 
 
-const categorySchema = z.object({
-  id: z.string().optional(),
-  name: z.string(),
-  desc: z.string(),
-  productDesc: z.string().optional(),
-  slug: z.string().optional(),
-  image: z.string().optional(),
-  isFeatured: z.coerce.boolean().optional(),
-  sortOrder: z.coerce.number().optional(),
-  disablePickupDiscount: z.coerce.boolean().optional(),
-});
+// const categorySchema = z.object({
+//   id: z.string().optional(),
+//   name: z.string(),
+//   desc: z.string(),
+//   productDesc: z.string().optional(),
+//   slug: z.string().optional(),
+//   image: z.string().optional(),
+//   isFeatured: z.coerce.boolean().optional(),
+//   sortOrder: z.coerce.number().optional(),
+//   disablePickupDiscount: z.coerce.boolean().optional(),
+// });
 
 export async function uploadCategoryFromCSV(data: any) {
   const parsed = categorySchema.safeParse(data);
