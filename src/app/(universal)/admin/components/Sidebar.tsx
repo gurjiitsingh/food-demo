@@ -14,6 +14,7 @@ import {
   MdRestaurantMenu,
   MdSettings,
   MdOutlineCrisisAlert,
+  MdOutlineBackup,
 } from 'react-icons/md';
 import { FaUsers } from 'react-icons/fa';
 import { BsCardList } from 'react-icons/bs';
@@ -52,6 +53,8 @@ const menuList: Titem[] = [
   { name: 'Delivery', link: '/admin/delivery', icon: <TbTruckDelivery /> },
   { name: 'Users', link: '/admin/users', icon: <FaUsers /> },
   { name: 'Setting', link: '/admin/setting', icon: <MdSettings /> },
+  { name: 'Data Backup', link: '/admin/data-backup', icon: <MdOutlineBackup /> }, // Add icon to top
+
 ];
 
 const Sidebar = () => {

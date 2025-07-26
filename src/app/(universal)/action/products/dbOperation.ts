@@ -541,6 +541,8 @@ export async function uploadProductFromCSV(data: Partial<ProductType>) {
     throw new Error("Missing required fields: name or price");
   }
 
+  console.log("data------",data)
+
   const productData: Omit<ProductType, "id"> = {
     name: data.name,
     price: Number(data.price),
@@ -569,5 +571,5 @@ export async function uploadProductFromCSV(data: Partial<ProductType>) {
         : undefined,
   };
 
-  await adminDb.collection("product").add(productData);
+  await adminDb.collection("products").add(productData);
 }

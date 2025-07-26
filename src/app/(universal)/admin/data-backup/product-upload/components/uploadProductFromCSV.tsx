@@ -2,9 +2,8 @@
 
 import { useState } from 'react';
 import Papa from 'papaparse';
-import { uploadProductFromCSV } from '@/app/(universal)/action/products/dbOperation';
 
-export default function UploadProductCSV() {
+export default function UploadCategoryCSV() {
   const [uploading, setUploading] = useState(false);
   const [message, setMessage] = useState('');
 
@@ -23,10 +22,11 @@ export default function UploadProductCSV() {
           const rows = result.data as any[];
 
           for (const row of rows) {
-            await uploadProductFromCSV(row);
+            console.log('Category row --->', row);
+            await uploadCategoryFromCSV(row);
           }
 
-          setMessage(`✅ Uploaded ${rows.length} products successfully.`);
+          setMessage(`✅ Uploaded ${rows.length} categories successfully.`);
         } catch (err) {
           console.error(err);
           setMessage('❌ Upload failed. Check console for details.');
@@ -44,7 +44,7 @@ export default function UploadProductCSV() {
 
   return (
     <div className="space-y-4 p-4 bg-white rounded shadow-md">
-      <h2 className="text-xl font-semibold">Upload Product CSV</h2>
+      <h2 className="text-xl font-semibold">Upload Category CSV</h2>
       <input type="file" accept=".csv" onChange={handleFileUpload} />
       {uploading && <p className="text-blue-500">Uploading...</p>}
       {message && <p className="text-sm">{message}</p>}
