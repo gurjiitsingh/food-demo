@@ -17,9 +17,11 @@ export function formatDateUTC(
   const timeZone =
     timeZoneMap[locale] || Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-  const dateObj = new Date(dateStr);
+  const dateObj = typeof dateStr === "string" || typeof dateStr === "number"
+    ? new Date(dateStr)
+    : null;
 
-  if (isNaN(dateObj.getTime())) return "";
+  if (!dateObj || isNaN(dateObj.getTime())) return "";
 
   return dateObj.toLocaleString(locale, {
     dateStyle: "medium",
@@ -27,42 +29,6 @@ export function formatDateUTC(
     timeZone,
   });
 }
-
-
-
-
-
-// export function formatDateUTC(
-//   dateStr: string | number | undefined,
-//   locale: string = "en-GB"
-// ): string {
-//   if (!dateStr) return "";
-
-//   const timeZoneMap: Record<string, string> = {
-//     "de-DE": "Europe/Berlin",
-//     "en-IN": "Asia/Kolkata",
-//     "en-US": "America/New_York",
-//     "en-GB": "Europe/London",
-//     "en-CA": "America/Toronto",
-//     "en-AU": "Australia/Sydney",
-//     "ja-JP": "Asia/Tokyo",
-//   };
-
-//   const timeZone =
-//     timeZoneMap[locale] || Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-//   const dateObj = typeof dateStr === "string" || typeof dateStr === "number"
-//     ? new Date(dateStr)
-//     : null;
-
-//   if (!dateObj || isNaN(dateObj.getTime())) return "";
-
-//   return dateObj.toLocaleString(locale, {
-//     dateStyle: "medium",
-//     timeStyle: "short",
-//     timeZone,
-//   });
-// }
 
 
 
