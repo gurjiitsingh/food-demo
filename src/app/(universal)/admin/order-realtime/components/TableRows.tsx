@@ -8,7 +8,7 @@ import { MdDeleteForever } from "react-icons/md";
 import { useLanguage } from "@/store/LanguageContext";
 import { formatCurrencyNumber } from "@/utils/formatCurrency";
 import { UseSiteContext } from "@/SiteContext/SiteContext";
-import { formatDateUTC } from "@/utils/formatDateUTC-client";
+import { formatDateUTC } from "@/utils/formatDateUTC";
 
 function TableRows({ order }: { order: orderMasterDataT }) {
   const { TEXT } = useLanguage();

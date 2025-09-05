@@ -1,60 +1,15 @@
 export const TEXT = {
-  home_page_offer: "", // fallback for DB-driven value
-  offer_instruction: "", // fallback for DB-driven value
-  delivery_note: "Delivery is also available.",
-  home_page_disclaimer: "Food may differ from image.",
   logo_alt: "Logo",
-  brand: "Masala",
-  tag_line: "Taste of India",
-  brand_name: "Masala Taste of India",
 
-  menu_list: [
-    { name: "Home", link: "/" },
-    { name: "About Us", link: "/about" },
-    { name: "Contact", link: "/contact" },
-    { name: "Table Reservation", link: "/reservation" },
-  ],
 
-  menu: [
-    { name: "Home", link: "/" },
-    { name: "About Us", link: "/about" },
-    { name: "Contact", link: "/contact" },
-    { name: "Table Reservation", link: "/reservation" },
-  ],
+  
 
-  sections: {
-    links: {
-      title: "Links",
-      items: [
-        { name: "Home", href: "/" },
-        { name: "Menu", href: "/" },
-        { name: "About", href: "/about" },
-        { name: "Contact", href: "/contact" },
-        { name: "Reservation", href: "/reservation" },
-        { name: "Allergens", href: "/allergene" },
-      ],
-    },
-    company: {
-      title: "Company",
-      items: [
-        { name: "Privacy Policy", href: "/privacy" },
-        { name: "Terms of Service", href: "#" },
-      ],
-    },
-    social: {
-      title: "Social media",
-    },
-  },
+  searchForm: {
+  placeholder: "Search ...",
+},
 
-  footer_bottom: {
-    poweredBy: "Powered by",
-    poweredByUrl: "http://www.gstadeveloper.com",
-    copyright: {
-      prefix: "Copyright ©",
-      suffix: "All Rights Reserved by",
-      company: "Masala Taste of India",
-    },
-  },
+ 
+
 
   // Text from cart component
   cart_heading: "Cart Total",
@@ -73,6 +28,28 @@ export const TEXT = {
   order_button_suffix: "Order",
   placing_order_text: "Placing Order...",
 
+
+  deliveryCost: {
+  title: "Delivery Cost",
+  addressRequired: "Please enter full address and postal code to estimate delivery cost",
+notDeliverableAddress: "We do not deliver at this address"
+},
+
+//order cancel
+
+  orderCancel: {
+    title: "Payment Canceled.",
+    message: "Your payment has been canceled. Please try again.",
+    retry: "Try Again",
+  },
+
+// order fail
+orderFail: {
+  title: "Payment failed.",
+  message: "Use another payment method or select cash on delivery",
+  retry: "Try again",
+},
+
   // Text from address form component
   address_section_title: "Address",
   email_label: "Email",
@@ -90,8 +67,8 @@ export const TEXT = {
   payment_method_cod: "Cash on Delivery",
 
   // Search section
-  search_dish_or_category: "Search dish or select category",
-
+  search_dish_or_category: "Browse dishes",//"Search dish or select category",
+//Browse dishes
   // Mini cart sidebar
   cart_sidebar_title: "Your Cart",
   checkout_button: "Checkout",
@@ -99,11 +76,7 @@ export const TEXT = {
   shop_more_button: "Shop More",
   discount_hint_checkout: "See discount at checkout",
 
-  // Order complete
-
-  order_complete_heading: "Your order is complete",
-  pickup_time: "Pickup: 20–25 minutes",
-  delivery_time: "Delivery time: 40–55 minutes",
+  
 
   // toast error message
   error_select_payment_type: "Select payment type",
@@ -165,8 +138,4 @@ aria_delete_user: "Delete User",
 
 };
 
-export const SEO = {
-  title: "Masala – Indian Restaurant in Gifhorn, Lower Saxony",
-  description:
-    "Authentic Indian food at Masala Gifhorn. Order online for delivery or visit us in Lower Saxony.",
-};
+

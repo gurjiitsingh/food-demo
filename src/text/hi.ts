@@ -1,13 +1,6 @@
 export const TEXT = {
-  home_page_offer: "",
-  offer_instruction: "",
-  delivery_note: "डिलीवरी भी उपलब्ध है।",
-  home_page_disclaimer: "खाना तस्वीर से अलग हो सकता है।",
   logo_alt: "लोगो",
-  brand: "मसाला",
-  tag_line: "भारत का स्वाद",
-  brand_name: "मसाला भारत का स्वाद",
-
+  
   menu_list: [
     { name: "होम", link: "/" },
     { name: "हमारे बारे में", link: "/about" },
@@ -46,13 +39,18 @@ export const TEXT = {
     },
   },
 
+  searchForm: {
+  placeholder: "व्यंजन खोजें...",
+},
+
+
   footer_bottom: {
     poweredBy: "द्वारा संचालित",
     poweredByUrl: "http://www.gstadeveloper.com",
     copyright: {
       prefix: "कॉपीराइट ©",
       suffix: "सभी अधिकार सुरक्षित",
-      company: "मसाला भारत का स्वाद",
+      company: "",
     },
   },
 
@@ -94,7 +92,23 @@ export const TEXT = {
 order_complete_heading: "आपका ऑर्डर पूरा हो गया है",
   pickup_time: "पिकअप: 20–25 मिनट",
   delivery_time: "डिलीवरी समय: 40–55 मिनट",
+
+
+//order fail
+  orderFail: {
+  title: "भुगतान विफल हुआ।",
+  message: "कृपया कोई अन्य भुगतान विधि का उपयोग करें या कैश ऑन डिलीवरी चुनें",
+  retry: "फिर से प्रयास करें",
+},
+
+// Order Cancel
+orderCancel: {
+  title: "भुगतान रद्द कर दिया गया।",
+  message: "आपका भुगतान रद्द हो गया है, कृपया पुनः प्रयास करें।",
+  retry: "पुनः प्रयास करें",
+},
   // toast error message
+  
 
    error_select_payment_type: "भुगतान का प्रकार चुनें",
     error_select_address: "पता चुनें",
@@ -108,8 +122,4 @@ order_complete_heading: "आपका ऑर्डर पूरा हो गय
 };
 
 
-export const SEO = {
-  title: "Masala – Indian Restaurant in Gifhorn, Lower Saxony",
-  description:
-    "Authentic Indian food at Masala Gifhorn. Order online for delivery or visit us in Lower Saxony.",
-};
+

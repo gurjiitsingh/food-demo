@@ -1,7 +1,7 @@
-import "../globals.css";
+import "@/custom/globals.css";
 import { Toaster } from "react-hot-toast";
 import type { Metadata } from "next";
-import { getSeoMetadata } from "@/utils/getSeoMetadata";
+//import { getSeoMetadata } from "@/utils/getSeoMetadata";
 import CartBottom from "@/components/CartBottom/CartBottom";
 
 import UTMInitializer from "../UTMInitializer";
@@ -12,9 +12,17 @@ import { BargerMenu } from "@/components/Bargermenu/Menu";
 import Modal from "@/components/level-1/Modal";
 import Header from "@/components/level-1/Header";
 import Footer from "@/components/level-1/Footer";
+import { SEO } from "@/config/languages";
+
 
 // ✅ Dynamic SEO fallback logic here
-export const metadata: Metadata = getSeoMetadata();
+//export const metadata: Metadata = getSeoMetadata();
+
+export const metadata: Metadata = {
+  title: SEO.title,
+  description: SEO.description,
+  other: { google: "notranslate" },
+};
 
 export default function RootLayout({
   children,
@@ -30,10 +38,13 @@ export default function RootLayout({
             <BargerMenu />
             <Modal />
 
-            <div className="layout-bg relative w-full h-screen overflow-x-hidden m-0 p-0">
+            <div
+              className="layout-bg relative w-full h-screen overflow-x-hidden bg-cover  m-0 p-0"
+              
+            >
               <div
                 className="absolute top-0 inset-0 z-0 bg-cover bg-center bg-no-repeat"
-                style={{ backgroundImage: "url('/hero-bg.jpg')" }}
+              
               ></div>
 
               <div className="z-50">

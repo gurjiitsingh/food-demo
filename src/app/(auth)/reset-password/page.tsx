@@ -3,8 +3,7 @@ import ResetPasswordPage from './components/ResetPasswordPage'
 
 export default function page() {
   return (
-    <Suspense>
-   <ResetPasswordPage />
-   </Suspense>
+    <Suspense> <ResetPasswordPage /></Suspense>
+   
   )
 }

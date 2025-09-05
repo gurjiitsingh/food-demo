@@ -1,8 +1,9 @@
 'use client'
 
-import HeroText from "@/components/level-2/HeroText";
-import Title from "@/components/level-2/Title";
-import SearchForm from "@/components/level-2/SearchForm";
+// import HeroText from "@/components/level-2/HeroText";
+import Title from "@/custom/cus-components/Title";
+
+import SearchFormWB from "./SearchFormWB";
 
 
 export default function Hero() {
@@ -12,12 +13,12 @@ export default function Hero() {
               <div>
                <Title />
                 <div className="flex items-center gap-2 w-full">
-                  <SearchForm />
+                  <SearchFormWB />
                 </div>
               </div>
-              <div>
+              {/* <div>
                 <HeroText />
-              </div>
+              </div> */}
             </div>
    </>
   )

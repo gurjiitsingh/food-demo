@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+
 import {
     PayPalButtons,
    
@@ -23,15 +23,26 @@ export default function Checkout(){
   
     const router = useRouter();
     const {   endTotalG } = useCartContext();
+
+
+
+//    if (
+//     !endTotalG || 
+//     typeof endTotalG !== "number" || 
+//     isNaN(endTotalG)
+//   ) {
+// //  toast.error(TEXT.error_address_not_deliverable);
+// toast.error("Something went wrong, refresh browser or reorder foods");
+//    console.log("paypal not a number")
+//    // return; // ⛔ stop
+//   }
+
+    
     const formattedAmount = (Number(endTotalG) || 0).toFixed(2);
 
    
 
-    let customerAddress = {};
-    if (typeof window !== 'undefined') {
-      const address = localStorage.getItem("customer_address");
-      customerAddress = address ? JSON.parse(address) : {};
-    }
+  
 
   
      const onCreateOrder = (data,actions) => {

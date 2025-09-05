@@ -161,7 +161,7 @@ body {
 } 
 
 .slick-arrow{
-  background-color: #438a57 !important;
+  background-color: #aaa !important;
   border-radius: 100%;
   padding-top:2px !important;
   z-index: 9999;
@@ -195,7 +195,25 @@ button:disabled {
 
 /* === Layout Colors === */
 .layout-bg {
-  @apply bg-[#d4eebe];
+  @apply 
+  bg-[#ECECEC]
+  /* bg-[#F5F4F7] */
+  /* bg-gradient-to-t from-rose-50 to-slate-100  */
+  /* bg-gradient-to-r from-[#FFFFFF] to-[#FAFAFA]; */
+  /* bg-gradient-to-r from-[#FAFEFF] to-[#F0FCFF]; */
+  /* bg-gradient-to-r from-[#FFFFFB] to-[#FFFEEB]; */
+  /* bg-gradient-to-r from-[#FAFFFB] to-[#F3FFF9]; */
+  /* bg-gradient-to-r from-[#F9FAFB] to-[#F3F4F6]; */
+  /* bg-gradient-to-r from-[#E8F5E9] to-[#E0F7FA]; */
+  /* bg-gradient-to-r from-[#FFF8E1] to-[#FFE0B2]; */
+  /* bg-gradient-to-r from-[#FFFDE1] to-[#E0F7FA]; */
+  /* bg-gradient-to-r from-[#555555] to-[#111111] */
+  /* bg-gradient-to-r from-[#555555] to-[#111111] */
+}
+
+
+.cart-bg {
+  @apply bg-[#A2AF9B]
 }
 
 /* === Toast Styles === */
@@ -250,7 +268,15 @@ button:disabled {
 /* Nav bar */
 
 .header-bg {
-  @apply bg-[#64870d];
+  @apply 
+  bg-[#E9E9E9]
+   /* bg-[#EDE8DC] */
+  /* bg-[#FE8B2E]; */
+  text-slate-500
+}
+
+.navbar-link-top {
+  @apply text-slate-500;
 }
 
 .header-shadow {
@@ -262,7 +288,7 @@ button:disabled {
 }
 
 .header-rounded {
-  @apply rounded-xl;
+  @apply rounded-3xl;
 }
 
 .header-toggle-hover {
@@ -276,11 +302,11 @@ button:disabled {
 
 /* Footer background colors */
 .footer-bg-primary {
-  @apply bg-[#FADB5E]; /* Original: #FADB5E */
+  @apply bg-slate-500 text-slate-50;; /*bg-[#FADB5E]; /* Original: #FADB5E */
 }
 
 .footer-bg-bottom {
-  @apply bg-[#64870d]; /* Original: #64870d */
+   @apply bg-slate-700;/*  bg-[#64870d]; * Original: #64870d */
 }
 
 /* Footer card background and border */
@@ -304,4 +330,18 @@ button:disabled {
 /* Border bottom for list items */
 .footer-item-border {
   @apply border-b border-slate-400;
+}
+
+
+/* Products */
+.product-card-bg{
+  @apply bg-zinc-50
+}
+
+.product-card-add-button-cover-1{
+  @apply text-slate-500 bg-[#FADB5E]
+}
+
+.product-card-add-title-cover-1{
+  @apply bg-[#64870d] text-white flex items-center justify-center text-nowrap text-center px-2 py-1  min-w-[180px]  rounded-3xl
 }

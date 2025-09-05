@@ -8,6 +8,23 @@ import { fetchCategories } from "@/app/(universal)/action/category/dbOperations"
 import { UseSiteContext } from "@/SiteContext/SiteContext";
 import { TEXT } from "@/config/languages";
 
+import { Cinzel, Lato, Roboto, Poppins } from "next/font/google";
+
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"], 
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"], // choose what you need
+});
+
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["400", "700"], 
+});
+
 export default function CategorySlider() {
   const [width, setWidth] = useState(0); // Start with 0, safe for SSR
   // const [width, setWidth] = useState(() =>
@@ -63,18 +80,18 @@ export default function CategorySlider() {
 
   const slidesToShow = useMemo(() => {
     const breakpoints = [
-      [1500, 9],
-      [1400, 9],
-      [1300, 8],
-      [1200, 8],
-      [1100, 7],
-      [1000, 7],
-      [900, 6],
-      [800, 6],
-      [700, 5],
-      [650, 5],
-      [550, 4],
-      [400, 3],
+      [1500, 7],
+      [1400, 6],
+      [1300, 6],
+      [1200, 5],
+      [1100, 5],
+      [1000, 5],
+      [900, 4],
+      [800, 4],
+      [700, 3],
+      [600, 3],
+      [500, 3],
+      [400, 2],
     ];
     for (const [breakpoint, count] of breakpoints) {
       if (width > breakpoint) return count;
@@ -91,52 +108,77 @@ export default function CategorySlider() {
   };
 
  return (
-  // <div className="relative z-10 mt-20 mb-7 container mx-auto ">
-    
-<div className="relative z-10 mt-10 mb-7 container mx-auto ">
-   <div className="container mx-auto w-full flex justify-end ">
-    <div className=" w-fit  text-zinc-500 light-bg rounded-t-2xl py-1 px-2 text-sm font-light md:font-normal">
+  <div className="relative z-10 mt-5 mb-7 container mx-auto ">
+    {/* <div className="flex justify-end mb-1 px-2"> */}
+   <div className=" mx-auto w-full flex justify-end ">
+
+     <div className=" w-fit  text-zinc-500 bg-white rounded-t-2xl py-1 px-2 text-sm font-light md:font-normal">
           {TEXT.search_dish_or_category}
           
         </div>
-</div>
-    <div className="mx-auto max-w-[1700px] min-h-[100px] bg-white/70 backdrop-blur-md rounded-b-xl rounded-tl-xl shadow-md p-3">
+    </div>
+
+    <div className="mx-auto max-w-[1700px] min-h-[100px] bg-white backdrop-blur-md rounded-b-xl rounded-tl-xl shadow-md p-1">
       {categoryData.length > 0 && (
         <Slider {...sliderSettings}>
-          {categoryData.map((category) => (
-            <div key={category.id} className="mx-2">
-              <button onClick={() => setProductCategoryIdG(category.id)}>
-                <div className="w-[100px]">
-                  <div className="flex flex-col gap-1">
-                    <div
+{categoryData.map((category) => {
+  const isActive = displayCategory === category.id;
+
+  return (
+    <div
+      key={category.id}
+      className="!flex justify-center items-center px-1 py-1" // Add spacing between slides
+    >
+      <button
+        onClick={() => setProductCategoryIdG(category.id)}
+        className={`
+          group max-w-[200px] h-[180px]  
+          ${isActive ? '' : ''} 
+           hover:shadow-md transition-all duration-300 ease-in-out
+          flex flex-col items-center justify-start  gap-3
+        `}
+      >
+        <div className={`${
+                        displayCategory === category.id
+                          ? "relative  rounded-xl overflow-hidden bg-gray-100 shadow-inner border-amber-200 border-2"
+                          : "relative  rounded-xl overflow-hidden bg-gray-100 shadow-inner"
+                      }`}>
+  {/* <div
                       className={`${
                         displayCategory === category.id
-                          ? "primary py-1 rounded-xl"
+                          ? "bg-amber-300 py-1 rounded-xl"
                           : "py-1 rounded-xl"
                       }`}
-                    >
-                      <div className="h-fit w-fit rounded-lg px-1">
-                        <img
-                          className="rounded-lg h-20 w-48 object-fill"
-                          src={category.image || "/com.jpg"}
-                          alt={category.name || "Category"}
-                        />
-                      </div>
-                    </div>
-                    <div className="flex flex-col justify-center w-[110px] items-center">
-                      <h3 className="text-[.8rem] text-slate-600 px-0">
-                        {category.name}
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </button>
-            </div>
-          ))}
+                    > */}
+          <img
+            src={category.image || "/com.jpg"}
+            alt={category.name || "Category"}
+            className=" h-full object-cover transition-transform group-hover:scale-105"
+          />
+
+        
+        </div>
+
+        <span
+          className={`
+            text-center text-[15px] font-medium leading-tight 
+            ${isActive ? 'text-slate-600' : 'text-gray-800 group-hover:text-orange-600'}
+          `}
+        >
+          {category.name}
+        </span>
+      </button>
+    </div>
+  );
+})}
+
+
+
         </Slider>
       )}
     </div>
   </div>
 );
+
 
 }

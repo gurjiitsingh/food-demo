@@ -1,23 +1,26 @@
+"use client";
 import { UseSiteContext } from "@/SiteContext/SiteContext";
+import { useLanguage } from "@/store/LanguageContext"; 
 import React, { useEffect, useState } from "react";
 
-export default function SearchForm() {
+export default function SearchFormWB() {
   const { setProductToSearchQuery } = UseSiteContext();
+  const { TEXT } = useLanguage(); // ✅ get translations
   const [query, setQuery] = useState("");
 
   useEffect(() => {
     setProductToSearchQuery(query);
-  }, [query]);
+  }, [query, setProductToSearchQuery]);
 
   return (
     <div className="max-w-md w-full">
       <div className="relative">
         <input
           type="text"
-          placeholder="Gerichte suchen..."
+          placeholder={TEXT.searchForm.placeholder || "Search dishes..."} 
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full py-2 pl-10 pr-4 rounded-xl border border-[#64870d] focus:outline-none focus:ring-2 focus:ring-yellow-400 text-sm text-gray-800 shadow-sm placeholder-gray-400"
+          className="w-full bg-white py-2 pl-10 pr-4 rounded-3xl  focus:outline-none focus:ring-2 focus:ring-yellow-400 text-sm text-gray-800  placeholder-gray-400"
         />
         <svg
           className="absolute left-3 top-2.5 w-5 h-5 text-gray-400 pointer-events-none"
